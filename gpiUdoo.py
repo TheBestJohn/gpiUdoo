@@ -7,7 +7,7 @@ class gpiUdoo:
         if io != "in" and io != "out":
             return False
         else:
-            setPinDirection(io)
+            self.setPinDirection(io)
             print(str(io)+str(pins[pin]))
 
     def digitalRead(self):
@@ -33,7 +33,7 @@ class gpiUdoo:
         return True
 
     def digitalWrite(self,value):
-        if getPinDirection() == "in":
+        if self.getPinDirection() == "in":
             print(str(self.pin)+" Is currently set as an input. Can't write to it")
             return False
         else:
